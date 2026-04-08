@@ -27,16 +27,17 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--charcoa
 @keyframes fadeIn{to{opacity:1}}
 @keyframes scaleLine{to{transform:scaleX(1)}}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .5s ease}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 48px;display:flex;justify-content:flex-end;align-items:center;transition:all .5s ease}
 nav.scrolled{background:rgba(254,246,244,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 30px rgba(212,154,164,.1);padding:14px 48px}
-.nav-logo{font-size:18px;font-weight:400;color:var(--charcoal);letter-spacing:6px;text-decoration:none}
 .nav-links{display:flex;gap:34px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--warm-gray);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:400;position:relative;transition:color .3s}
+.nav-links a{text-decoration:none;color:var(--pink-light);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:400;position:relative;transition:color .3s}
+nav.scrolled .nav-links a{color:var(--warm-gray)}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--pink-dark);transition:width .4s ease}
 .nav-links a:hover{color:var(--pink-dark)}
 .nav-links a:hover::after{width:100%}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px;z-index:1001}
-.hamburger span{width:24px;height:1.5px;background:var(--charcoal);transition:all .3s ease;display:block}
+.hamburger span{width:24px;height:1.5px;background:var(--white);transition:all .3s ease;display:block}
+nav.scrolled .hamburger span{background:var(--charcoal)}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
@@ -73,21 +74,35 @@ nav.scrolled{background:rgba(254,246,244,.94);backdrop-filter:blur(20px);-webkit
 .section-title em{font-style:normal;color:var(--pink-dark)}
 .section-desc{font-size:16px;color:var(--warm-gray);line-height:1.7;max-width:560px}
 
-/* NAIL BABES — şeffaf PNG figürler, sayfada yüzüyor */
+/* NAIL BABES — with flowers */
 .babes-section{padding:120px 48px 100px;background:linear-gradient(180deg,var(--blush) 0%,var(--pink-pale) 100%);position:relative;overflow:hidden;transition:all .8s ease}
 .babes-section.focused{background:linear-gradient(180deg,#3D2B30 0%,#2C1F22 100%)}
 .babes-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 10%,rgba(212,154,164,.25),transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(224,174,182,.2),transparent 50%);pointer-events:none;transition:opacity .8s ease}
 .babes-section.focused::before{opacity:.3}
+
+/* Çiçek dekorasyonları */
+.babes-flowers{position:absolute;inset:0;pointer-events:none;z-index:0;transition:opacity .8s ease}
+.babes-section.focused .babes-flowers{opacity:.25}
+.flower{position:absolute;opacity:.5}
+.flower svg{width:100%;height:100%;stroke:var(--pink-dark);stroke-width:1.2;fill:none}
+.flower-1{top:8%;left:5%;width:70px;height:70px;transform:rotate(-15deg)}
+.flower-2{top:15%;right:8%;width:55px;height:55px;transform:rotate(25deg)}
+.flower-3{top:45%;left:3%;width:48px;height:48px;transform:rotate(10deg)}
+.flower-4{top:60%;right:4%;width:65px;height:65px;transform:rotate(-20deg)}
+.flower-5{bottom:10%;left:15%;width:42px;height:42px;transform:rotate(35deg)}
+.flower-6{bottom:18%;right:20%;width:50px;height:50px;transform:rotate(-10deg)}
+.flower-7{top:30%;left:45%;width:38px;height:38px;transform:rotate(20deg);opacity:.35}
+.flower-8{bottom:35%;left:35%;width:32px;height:32px;transform:rotate(-30deg);opacity:.35}
+
 .babes-inner{max-width:1300px;margin:0 auto;position:relative;z-index:1}
 .babes-num{font-size:80px;color:var(--pink-soft);font-weight:200;line-height:.8;margin-bottom:-6px;opacity:.7;transition:opacity .5s ease,color .5s ease}
 .babes-section.focused .babes-num{color:var(--pink-dark);opacity:.2}
-.babes-section.focused .babes-header .section-label,
 .babes-section.focused .babes-header .section-title,
 .babes-section.focused .babes-header .section-desc{opacity:.2;transition:opacity .5s ease}
 .babes-section.focused .section-title{color:var(--pink-light)}
 .babes-section.focused .section-desc{color:var(--pink-light)}
 .babes-header{margin-bottom:60px;transition:opacity .5s ease}
-.babes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;perspective:1400px;align-items:end}
+.babes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;perspective:1400px;align-items:end;position:relative;z-index:1}
 .babe-card{position:relative;cursor:pointer;transition:all .7s cubic-bezier(.2,.8,.2,1);transform-origin:bottom center;aspect-ratio:3/4}
 .babe-card img{width:100%;height:100%;object-fit:contain;object-position:bottom center;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .6s ease;filter:drop-shadow(0 20px 30px rgba(166,107,118,.2))}
 .babes-section.focused .babe-card:not(:hover) img{opacity:.18;filter:blur(6px) brightness(.4) drop-shadow(0 0 0 transparent);transform:scale(.9)}
@@ -107,6 +122,7 @@ nav.scrolled{background:rgba(254,246,244,.94);backdrop-filter:blur(20px);-webkit
 .cat-num{font-size:84px;color:var(--pink-soft);font-weight:200;line-height:.8;margin-bottom:-6px;opacity:.65}
 
 .masonry{columns:3;column-gap:14px}
+.masonry.larger{columns:2;column-gap:18px;max-width:900px}
 .masonry-item{break-inside:avoid;margin-bottom:14px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform .4s ease,box-shadow .4s ease}
 .masonry-item:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(212,154,164,.18)}
 .masonry-item img{width:100%;display:block;transition:transform .6s ease}
@@ -136,7 +152,6 @@ nav.scrolled{background:rgba(254,246,244,.94);backdrop-filter:blur(20px);-webkit
 .ba-zoom{position:absolute;bottom:14px;right:14px;z-index:4;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:background .3s}
 .ba-zoom:hover{background:var(--white)}
 
-/* LIGHTBOX */
 .lightbox{position:fixed;inset:0;background:rgba(44,37,38,.94);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:zoom-out}
 .lightbox.active{display:flex}
 .lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:lbZoom .3s ease}
@@ -145,7 +160,7 @@ nav.scrolled{background:rgba(254,246,244,.94);backdrop-filter:blur(20px);-webkit
 .lightbox-close svg{stroke:var(--white);width:20px;height:20px}
 @keyframes lbZoom{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 
-/* SERVICES — emojisiz, sade */
+/* SERVICES */
 .services-strip{background:var(--white);padding:90px 48px;position:relative;overflow:hidden}
 .services-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(212,154,164,.06),transparent 60%);pointer-events:none}
 .services-inner{max-width:1300px;margin:0 auto;position:relative;z-index:1;text-align:center}
@@ -175,18 +190,17 @@ nav.scrolled{background:rgba(254,246,244,.94);backdrop-filter:blur(20px);-webkit
 .contact-actions{display:flex;flex-direction:column;gap:14px}
 .contact-actions .btn{justify-content:center}
 
-/* INSTA CTA */
+/* INSTA */
 .insta-cta{text-align:center;padding:90px 40px;background:var(--charcoal);position:relative;overflow:hidden}
 .insta-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(212,154,164,.12),transparent 60%)}
 .insta-cta>*{position:relative;z-index:2}
 .insta-cta .section-label{color:var(--pink);justify-content:center}
-.insta-handle{font-size:clamp(28px,4.5vw,46px);font-weight:200;color:var(--white);margin-bottom:10px;letter-spacing:3px}
+.insta-handle{font-size:clamp(28px,4.5vw,46px);font-weight:200;color:var(--white);margin-bottom:30px;letter-spacing:3px}
 .insta-handle em{font-style:normal;color:var(--pink-light)}
-.insta-sub{font-size:14px;color:var(--warm-gray-light);letter-spacing:2px;margin-bottom:30px}
 
 /* FOOTER */
 footer{background:var(--charcoal);color:var(--pink-light);padding:55px 48px 26px;border-top:1px solid rgba(212,154,164,.1)}
-.footer-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:42px}
+.footer-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:42px}
 .footer-brand{font-size:18px;font-weight:300;letter-spacing:6px;margin-bottom:16px;color:var(--white)}
 .footer-tagline{font-size:14px;color:var(--warm-gray-light);line-height:1.7;max-width:340px}
 .footer-heading{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:18px}
@@ -197,21 +211,22 @@ footer{background:var(--charcoal);color:var(--pink-light);padding:55px 48px 26px
 .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-@media(max-width:1024px){.masonry{columns:2}.babes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1024px){.masonry{columns:2}.masonry.larger{columns:2}.babes-grid{grid-template-columns:repeat(2,1fr)}.flower-1,.flower-2{width:50px;height:50px}.flower-3,.flower-4{width:40px;height:40px}}
 @media(max-width:900px){
 .nav-links{display:none}.hamburger{display:flex}.mobile-menu{display:flex}
 nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 .contact-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr;gap:24px}
 .cat-section{padding:60px 24px}
 .cat-section.has-bg .cat-content{padding:0 24px}
-.babes-section{padding:60px 24px}
+.babes-section{padding:80px 24px}
 .services-strip{padding:60px 24px}.contact-strip{padding:60px 24px}
 .services-row{flex-wrap:wrap}.service-col{flex:1 1 calc(50% - 1px);border-bottom:1px solid var(--pink-pale)}
 .ba-grid{grid-template-columns:1fr}
 .ba-grid.single{grid-template-columns:1fr}
 .babe-card:hover{transform:scale(1.05)}
+.flower{opacity:.3}
 }
-@media(max-width:480px){.masonry{columns:1}.babes-grid{grid-template-columns:1fr}.services-row{flex-direction:column}.service-col{border-right:none}}
+@media(max-width:480px){.masonry{columns:1}.masonry.larger{columns:1}.babes-grid{grid-template-columns:1fr}.services-row{flex-direction:column}.service-col{border-right:none}}
 </style>
 </head>
 <body>
@@ -223,7 +238,6 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 </div>
 
 <nav id="navbar">
-  <a href="#" class="nav-logo">Nails by Ceyda</a>
   <ul class="nav-links">
     <li><a href="#babes">Nail Babes</a></li>
     <li><a href="#galeri">Galeri</a></li>
@@ -253,12 +267,21 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   </div>
 </section>
 
-<!-- NAIL BABES -->
+<!-- NAIL BABES with flowers -->
 <section class="babes-section" id="babes">
+  <div class="babes-flowers">
+    <div class="flower flower-1"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="8"/><ellipse cx="50" cy="25" rx="10" ry="18"/><ellipse cx="50" cy="75" rx="10" ry="18"/><ellipse cx="25" cy="50" rx="18" ry="10"/><ellipse cx="75" cy="50" rx="18" ry="10"/><ellipse cx="32" cy="32" rx="12" ry="14" transform="rotate(-45 32 32)"/><ellipse cx="68" cy="32" rx="12" ry="14" transform="rotate(45 68 32)"/><ellipse cx="32" cy="68" rx="12" ry="14" transform="rotate(45 32 68)"/><ellipse cx="68" cy="68" rx="12" ry="14" transform="rotate(-45 68 68)"/></svg></div>
+    <div class="flower flower-2"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="6"/><path d="M50 15 Q65 30 50 50 Q35 30 50 15 Z"/><path d="M85 50 Q70 65 50 50 Q70 35 85 50 Z"/><path d="M50 85 Q35 70 50 50 Q65 70 50 85 Z"/><path d="M15 50 Q30 35 50 50 Q30 65 15 50 Z"/></svg></div>
+    <div class="flower flower-3"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="5"/><ellipse cx="50" cy="22" rx="8" ry="15"/><ellipse cx="78" cy="50" rx="15" ry="8"/><ellipse cx="50" cy="78" rx="8" ry="15"/><ellipse cx="22" cy="50" rx="15" ry="8"/></svg></div>
+    <div class="flower flower-4"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="7"/><path d="M50 10 C60 25 60 40 50 50 C40 40 40 25 50 10"/><path d="M90 50 C75 60 60 60 50 50 C60 40 75 40 90 50"/><path d="M50 90 C40 75 40 60 50 50 C60 60 60 75 50 90"/><path d="M10 50 C25 40 40 40 50 50 C40 60 25 60 10 50"/><path d="M22 22 C35 28 45 38 50 50 C38 45 28 35 22 22"/><path d="M78 22 C72 35 62 45 50 50 C55 38 65 28 78 22"/><path d="M78 78 C65 72 55 62 50 50 C62 55 72 65 78 78"/><path d="M22 78 C28 65 38 55 50 50 C45 62 35 72 22 78"/></svg></div>
+    <div class="flower flower-5"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="6"/><circle cx="50" cy="25" r="12"/><circle cx="75" cy="50" r="12"/><circle cx="50" cy="75" r="12"/><circle cx="25" cy="50" r="12"/></svg></div>
+    <div class="flower flower-6"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="5"/><ellipse cx="50" cy="28" rx="7" ry="16" transform="rotate(0 50 50)"/><ellipse cx="50" cy="28" rx="7" ry="16" transform="rotate(60 50 50)"/><ellipse cx="50" cy="28" rx="7" ry="16" transform="rotate(120 50 50)"/><ellipse cx="50" cy="28" rx="7" ry="16" transform="rotate(180 50 50)"/><ellipse cx="50" cy="28" rx="7" ry="16" transform="rotate(240 50 50)"/><ellipse cx="50" cy="28" rx="7" ry="16" transform="rotate(300 50 50)"/></svg></div>
+    <div class="flower flower-7"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="4"/><path d="M50 20 Q58 35 50 48 Q42 35 50 20"/><path d="M80 50 Q65 58 52 50 Q65 42 80 50"/><path d="M50 80 Q42 65 50 52 Q58 65 50 80"/><path d="M20 50 Q35 42 48 50 Q35 58 20 50"/></svg></div>
+    <div class="flower flower-8"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="5"/><ellipse cx="50" cy="30" rx="6" ry="12"/><ellipse cx="50" cy="30" rx="6" ry="12" transform="rotate(72 50 50)"/><ellipse cx="50" cy="30" rx="6" ry="12" transform="rotate(144 50 50)"/><ellipse cx="50" cy="30" rx="6" ry="12" transform="rotate(216 50 50)"/><ellipse cx="50" cy="30" rx="6" ry="12" transform="rotate(288 50 50)"/></svg></div>
+  </div>
   <div class="babes-inner">
     <div class="babes-header reveal">
       <div class="babes-num">01</div>
-      <div class="section-label">Favori müşterilerim</div>
       <h2 class="section-title">Nail <em>Babes</em></h2>
       <p class="section-desc">Üzerine geldiğin müşteri öne çıkar, gerisi geri çekilir.</p>
     </div>
@@ -319,13 +342,13 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   </div>
 </section>
 
-<!-- 04 NAIL ART — 13 görsel -->
+<!-- 04 NAIL ART -->
 <section class="cat-section dreamy reveal">
   <div class="cat-header">
     <div class="cat-num">04</div>
     <div class="section-label">Kategori</div>
     <h2 class="section-title">Nail <em>art</em></h2>
-    <p class="section-desc">Hayal gücünüzün sınırı yok.</p>
+    <p class="section-desc">Hayalinizi birlikte resmediyoruz.</p>
   </div>
   <div class="masonry">
     <div class="masonry-item" onclick="openLightbox(this)"><img src="nail-art/IMG_0175.jpg" alt="Nail Art"><span class="masonry-label">Nail art</span></div>
@@ -351,7 +374,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
       <div class="cat-num">05</div>
       <div class="section-label">Kategori</div>
       <h2 class="section-title">Kalıcı <em>oje</em></h2>
-      <p class="section-desc">Jel ile güçlendirdiğimiz doğal tırnaklarınızı dilerseniz renklendiriyoruz.</p>
+      <p class="section-desc">Doğal tırnaklarınızı önce jel ile nazikçe güçlendiriyor, ardından dilediğiniz renkle buluşturuyoruz.</p>
     </div>
     <div class="masonry">
       <div class="masonry-item" onclick="openLightbox(this)"><img src="kalici-oje/IMG_2020.jpg" alt="Kalıcı Oje"><span class="masonry-label">Kalıcı oje</span></div>
@@ -409,11 +432,11 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
     <div class="cat-num">08</div>
     <div class="section-label">Kategori</div>
     <h2 class="section-title"><em>Bakım</em></h2>
-    <p class="section-desc">Profesyonel tırnak bakımı uygulamaları.</p>
+    <p class="section-desc">Manikür ve çıkartma işlemlerini inceleyebilirsiniz.</p>
   </div>
   <div class="sub-group">
     <div class="sub-title">Manikür</div>
-    <div class="masonry">
+    <div class="masonry larger">
       <div class="masonry-item" onclick="openLightbox(this)"><img src="manikur/IMG_2098.jpg" alt="Manikür"><span class="masonry-label">Manikür</span></div>
       <div class="masonry-item" onclick="openLightbox(this)"><img src="manikur/IMG_3438.JPG" alt="Manikür"><span class="masonry-label">Manikür</span></div>
     </div>
@@ -435,7 +458,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 
 </div>
 
-<!-- HİZMETLER — emojisiz, sade -->
+<!-- HİZMETLER -->
 <section class="services-strip" id="hizmetler">
   <div class="services-inner">
     <div class="services-header">
@@ -446,7 +469,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
       <div class="service-col reveal">
         <div class="s-num">01</div>
         <h3 class="s-name">Protez tırnak</h3>
-        <p class="s-desc">Doğal görünümlü, istediğiniz uzunluk ve şekilde protez tırnak. Doğal tırnağınız jel ile güçlendirilir.</p>
+        <p class="s-desc">Doğal görünümlü, istediğiniz uzunluk ve şekilde protez tırnak.</p>
       </div>
       <div class="service-col reveal">
         <div class="s-num">02</div>
@@ -486,8 +509,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
         <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Konum</div><div class="contact-value">Isparta, Türkiye</div></div></div>
         <div class="contact-item"><div class="contact-icon">📱</div><div><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://wa.me/905518259813" target="_blank">0551 825 98 13</a></div></div></div>
         <div class="contact-item"><div class="contact-icon">✦</div><div><div class="contact-label">Instagram</div><div class="contact-value"><a href="https://www.instagram.com/nails.byceyda/" target="_blank">@nails.byceyda</a></div></div></div>
-        <div class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">E-posta</div><div class="contact-value"><a href="/cdn-cgi/l/email-protection#2b484e524f4a455e595913196b4c464a424705484446"><span class="__cf_email__" data-cfemail="e182849885808f949393d9d3a1868c80888dcf828e8c">[email&#160;protected]</span></a></div></div></div>
-        <div class="contact-item"><div class="contact-icon">○</div><div><div class="contact-label">Çalışma saatleri</div><div class="contact-value">Pazartesi - Cumartesi: 10:00 - 19:00</div></div></div>
+        <div class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">E-posta</div><div class="contact-value"><a href="mailto:ceydanurr82@gmail.com">ceydanurr82@gmail.com</a></div></div></div>
       </div>
     </div>
     <div class="contact-actions reveal">
@@ -506,7 +528,6 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 <section class="insta-cta">
   <div class="section-label">Instagram</div>
   <h2 class="insta-handle">Takip edin — <em>@nails.byceyda</em></h2>
-  <p class="insta-sub">Son çalışmalarımı ve trendleri keşfedin</p>
   <a href="https://www.instagram.com/nails.byceyda/" target="_blank" class="btn btn-insta">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
     Instagram'da takip et
@@ -517,7 +538,6 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   <div class="footer-inner">
     <div><div class="footer-brand">Nails by Ceyda</div><p class="footer-tagline">Isparta'da profesyonel tırnak tasarımı. Protez tırnak, kalıcı oje ve nail art.</p></div>
     <div><div class="footer-heading">Menü</div><a href="#babes" class="footer-link">Nail Babes</a><a href="#galeri" class="footer-link">Galeri</a><a href="#hizmetler" class="footer-link">Hizmetler</a><a href="#iletisim" class="footer-link">İletişim</a></div>
-    <div><div class="footer-heading">Kategoriler</div><a href="#galeri" class="footer-link">French</a><a href="#galeri" class="footer-link">Klasikler</a><a href="#galeri" class="footer-link">Nail art</a><a href="#galeri" class="footer-link">Kalıcı oje</a></div>
   </div>
   <div class="footer-bottom">© 2026 Nails by Ceyda — Tüm hakları saklıdır.</div>
 </footer>
@@ -529,7 +549,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   <img id="lightboxImg" src="" alt="">
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
 const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu');
@@ -552,8 +572,26 @@ function openLightboxSrc(src){const lb=document.getElementById('lightbox');docum
 function closeLightbox(e){if(e.target.id==='lightbox'||e.target.closest('.lightbox-close')){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}});
 
-function startBA(e,card){e.preventDefault();const rect=card.getBoundingClientRect();function moveBA(ev){const x=(ev.touches?ev.touches[0].clientX:ev.clientX)-rect.left;const pct=Math.max(0,Math.min(100,(x/rect.width)*100));card.querySelector('.ba-after').style.clipPath=`inset(0 0 0 ${pct}%)`;card.querySelector('.ba-slider').style.left=pct+'%'}function stopBA(){document.removeEventListener('mousemove',moveBA);document.removeEventListener('mouseup',stopBA);document.removeEventListener('touchmove',moveBA);document.removeEventListe
-function startBA(e,card){e.preventDefault();const rect=card.getBoundingClientRect();function moveBA(ev){const x=(ev.touches?ev.touches[0].clientX:ev.clientX)-rect.left;const pct=Math.max(0,Math.min(100,(x/rect.width)*100));card.querySelector('.ba-after').style.clipPath=`inset(0 0 0 ${pct}%)`;card.querySelector('.ba-slider').style.left=pct+'%'}function stopBA(){document.removeEventListener('mousemove',moveBA);document.removeEventListener('mouseup',stopBA);document.removeEventListener('touchmove',moveBA);document.removeEventListener('touchend',stopBA)}document.addEventListener('mousemove',moveBA);document.addEventListener('mouseup',stopBA);document.addEventListener('touchmove',moveBA,{passive:false});document.addEventListener('touchend',stopBA)}
+function startBA(e,card){
+  e.preventDefault();
+  const rect=card.getBoundingClientRect();
+  function moveBA(ev){
+    const x=(ev.touches?ev.touches[0].clientX:ev.clientX)-rect.left;
+    const pct=Math.max(0,Math.min(100,(x/rect.width)*100));
+    card.querySelector('.ba-after').style.clipPath='inset(0 0 0 '+pct+'%)';
+    card.querySelector('.ba-slider').style.left=pct+'%';
+  }
+  function stopBA(){
+    document.removeEventListener('mousemove',moveBA);
+    document.removeEventListener('mouseup',stopBA);
+    document.removeEventListener('touchmove',moveBA);
+    document.removeEventListener('touchend',stopBA);
+  }
+  document.addEventListener('mousemove',moveBA);
+  document.addEventListener('mouseup',stopBA);
+  document.addEventListener('touchmove',moveBA,{passive:false});
+  document.addEventListener('touchend',stopBA);
+}
 </script>
 </body>
 </html>
