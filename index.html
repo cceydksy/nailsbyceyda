@@ -73,11 +73,11 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .btn-insta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(193,53,132,.3)}
 @keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-.section-label{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.section-label::before{content:'';width:24px;height:1px;background:var(--pink)}
-.section-title{font-size:clamp(34px,4.5vw,52px);font-weight:300;line-height:1.2;color:var(--charcoal);margin-bottom:14px;letter-spacing:1px}
-.section-title em{font-style:normal;color:var(--pink-dark)}
-.section-desc{font-size:16px;color:var(--warm-gray);line-height:1.7;max-width:560px}
+.section-label{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:flex;align-items:center;gap:10px;font-weight:500}
+.section-label::before{content:'';width:24px;height:1px;background:var(--pink-dark)}
+.section-title{font-size:clamp(34px,4.5vw,52px);font-weight:500;line-height:1.2;color:var(--charcoal);margin-bottom:14px;letter-spacing:1px}
+.section-title em{font-style:normal;color:var(--pink-dark);font-weight:500}
+.section-desc{font-size:16px;color:var(--charcoal);line-height:1.7;max-width:560px;font-weight:400}
 
 /* NAIL BABES — with flowers */
 .babes-section{padding:120px 48px 100px;background:transparent;position:relative;overflow:hidden;transition:all .8s ease;z-index:2}
@@ -108,7 +108,7 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .flower-16{top:65%;left:25%;width:32px;height:32px;transform:rotate(25deg);opacity:.3}
 
 .babes-inner{max-width:1300px;margin:0 auto;position:relative;z-index:1}
-.babes-num{font-size:80px;color:var(--pink-soft);font-weight:200;line-height:.8;margin-bottom:-6px;opacity:.7;transition:opacity .5s ease,color .5s ease}
+.babes-num{display:none}
 .babes-section.focused .babes-num{color:var(--pink-dark);opacity:.2}
 .babes-section.focused .babes-header .section-title,
 .babes-section.focused .babes-header .section-desc{opacity:.2;transition:opacity .5s ease}
@@ -132,7 +132,7 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .cat-section.dreamy{position:relative;overflow:hidden;z-index:2}
 .cat-section.dreamy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 80%,rgba(212,154,164,.05),transparent 50%),radial-gradient(ellipse at 85% 20%,rgba(224,174,182,.04),transparent 50%);pointer-events:none}
 .cat-header{margin-bottom:45px;position:relative;z-index:1}
-.cat-num{font-size:84px;color:var(--pink-soft);font-weight:200;line-height:.8;margin-bottom:-6px;opacity:.65}
+.cat-num{display:none}
 
 .masonry{columns:3;column-gap:14px}
 .masonry.larger{columns:2;column-gap:18px;max-width:900px}
@@ -146,9 +146,9 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .masonry-item:hover .masonry-label{opacity:1}
 
 .sub-group{margin-bottom:40px}
-.sub-title{font-size:20px;font-weight:400;color:var(--charcoal);margin-bottom:8px;display:flex;align-items:center;gap:12px;letter-spacing:2px}
+.sub-title{font-size:20px;font-weight:500;color:var(--charcoal);margin-bottom:8px;display:flex;align-items:center;gap:12px;letter-spacing:2px}
 .sub-title::before{content:'';width:18px;height:1px;background:var(--pink-dark)}
-.sub-desc{font-size:14px;color:var(--warm-gray);margin-bottom:18px;margin-left:30px;font-style:italic}
+.sub-desc{font-size:14px;color:var(--charcoal);margin-bottom:18px;margin-left:30px;font-style:italic;font-weight:400}
 
 /* BEFORE/AFTER */
 .ba-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
@@ -182,12 +182,12 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .service-col{flex:1;padding:40px 32px;border-right:1px solid var(--pink-pale);transition:background .3s;text-align:left}
 .service-col:last-child{border-right:none}
 .service-col:hover{background:var(--pink-pale)}
-.service-col .s-num{font-size:14px;color:var(--pink-dark);font-weight:300;margin-bottom:20px;letter-spacing:2px}
-.service-col .s-name{font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:14px;letter-spacing:1px}
-.service-col .s-desc{font-size:14px;color:var(--warm-gray);line-height:1.7}
+.service-col .s-num{font-size:14px;color:var(--pink-dark);font-weight:500;margin-bottom:20px;letter-spacing:2px}
+.service-col .s-name{font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:14px;letter-spacing:1px}
+.service-col .s-desc{font-size:14px;color:var(--charcoal);line-height:1.7;font-weight:400}
 
 .services-cta{margin-top:50px;padding:40px 30px;background:var(--pink-pale);border-radius:12px;text-align:center}
-.services-cta-text{font-size:16px;color:var(--charcoal);line-height:1.7;margin-bottom:24px;max-width:560px;margin-left:auto;margin-right:auto}
+.services-cta-text{font-size:16px;color:var(--charcoal);line-height:1.7;margin-bottom:24px;max-width:560px;margin-left:auto;margin-right:auto;font-weight:500}
 .services-cta-buttons{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
 /* CONTACT */
@@ -196,8 +196,8 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .contact-info{display:flex;flex-direction:column;gap:26px}
 .contact-item{display:flex;gap:16px;align-items:flex-start}
 .contact-icon{width:42px;height:42px;border-radius:8px;background:var(--charcoal);color:var(--pink-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.contact-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-dark);margin-bottom:4px}
-.contact-value{font-size:15px;color:var(--charcoal);line-height:1.5}
+.contact-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-dark);margin-bottom:4px;font-weight:500}
+.contact-value{font-size:15px;color:var(--charcoal);line-height:1.5;font-weight:400}
 .contact-value a{color:var(--charcoal);text-decoration:none;transition:color .3s}
 .contact-value a:hover{color:var(--pink-dark)}
 .contact-actions{display:flex;flex-direction:column;gap:14px}
@@ -328,7 +328,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   <div class="hero-content">
     <div class="hero-badge">Isparta</div>
     <h1 class="hero-title">Nails by Ceyda</h1>
-    <p class="hero-desc">Protez tırnak, kalıcı oje ve nail art. Çalışmalarıma göz atın, beğendiğiniz tasarımla randevunuzu oluşturun.</p>
+    <p class="hero-desc">Protez tırnak, kalıcı oje ve nail art. Çalışmalarıma göz atın, birlikte neler yapabileceğimizi görün.</p>
     <div class="hero-cta">
       <a href="https://wa.me/905518259813" target="_blank" class="btn btn-primary">Randevu al</a>
       <a href="#babes" class="btn btn-outline">Portfolyoyu keşfet</a>
