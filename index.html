@@ -20,7 +20,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--charcoal);overflow-x:hidden;font-weight:300;position:relative}
 
 /* Global çiçek arka plan */
-.global-flowers{position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.55}
+.global-flowers{position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.85}
 .gflower{position:absolute}
 .gflower img{width:100%;height:auto;display:block;mix-blend-mode:multiply}
 
@@ -80,7 +80,7 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .section-desc{font-size:16px;color:var(--warm-gray);line-height:1.7;max-width:560px}
 
 /* NAIL BABES — with flowers */
-.babes-section{padding:120px 48px 100px;background:rgba(255,255,255,.5);backdrop-filter:blur(2px);position:relative;overflow:hidden;transition:all .8s ease;z-index:2}
+.babes-section{padding:120px 48px 100px;background:transparent;position:relative;overflow:hidden;transition:all .8s ease;z-index:2}
 .babes-section.focused{background:linear-gradient(180deg,#3D2B30 0%,#2C1F22 100%)}
 .babes-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 10%,rgba(212,154,164,.25),transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(224,174,182,.2),transparent 50%);pointer-events:none;transition:opacity .8s ease}
 .babes-section.focused::before{opacity:.3}
@@ -127,7 +127,7 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 
 /* CATEGORY */
 .cat-section{padding:90px 48px;max-width:1300px;margin:0 auto;position:relative;z-index:2}
-.cat-section.has-bg{background:rgba(255,255,255,.6);backdrop-filter:blur(2px);max-width:100%;padding-left:0;padding-right:0}
+.cat-section.has-bg{background:transparent;max-width:100%;padding-left:0;padding-right:0}
 .cat-section.has-bg .cat-content{max-width:1300px;margin:0 auto;padding:0 48px}
 .cat-section.dreamy{position:relative;overflow:hidden;z-index:2}
 .cat-section.dreamy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 80%,rgba(212,154,164,.05),transparent 50%),radial-gradient(ellipse at 85% 20%,rgba(224,174,182,.04),transparent 50%);pointer-events:none}
@@ -174,11 +174,11 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 @keyframes lbZoom{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 
 /* SERVICES */
-.services-strip{background:rgba(255,255,255,.6);backdrop-filter:blur(2px);padding:90px 48px;position:relative;overflow:hidden;z-index:2}
+.services-strip{background:transparent;padding:90px 48px;position:relative;overflow:hidden;z-index:2}
 .services-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(212,154,164,.04),transparent 60%);pointer-events:none}
 .services-inner{max-width:1300px;margin:0 auto;position:relative;z-index:2;text-align:center}
 .services-header{text-align:left;margin-bottom:50px}
-.services-row{display:flex;gap:0;border-top:1px solid var(--pink-pale);border-bottom:1px solid var(--pink-pale);position:relative;z-index:2;background:rgba(255,255,255,.5)}
+.services-row{display:flex;gap:0;border-top:1px solid var(--pink-pale);border-bottom:1px solid var(--pink-pale);position:relative;z-index:2;background:rgba(255,255,255,.85)}
 .service-col{flex:1;padding:40px 32px;border-right:1px solid var(--pink-pale);transition:background .3s;text-align:left}
 .service-col:last-child{border-right:none}
 .service-col:hover{background:var(--pink-pale)}
@@ -191,7 +191,7 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .services-cta-buttons{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
 /* CONTACT */
-.contact-strip{background:rgba(255,255,255,.6);backdrop-filter:blur(2px);padding:90px 48px;position:relative;z-index:2}
+.contact-strip{background:transparent;padding:90px 48px;position:relative;z-index:2}
 .contact-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .contact-info{display:flex;flex-direction:column;gap:26px}
 .contact-item{display:flex;gap:16px;align-items:flex-start}
