@@ -553,3 +553,7 @@ function closeLightbox(e){if(e.target.id==='lightbox'||e.target.closest('.lightb
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}});
 
 function startBA(e,card){e.preventDefault();const rect=card.getBoundingClientRect();function moveBA(ev){const x=(ev.touches?ev.touches[0].clientX:ev.clientX)-rect.left;const pct=Math.max(0,Math.min(100,(x/rect.width)*100));card.querySelector('.ba-after').style.clipPath=`inset(0 0 0 ${pct}%)`;card.querySelector('.ba-slider').style.left=pct+'%'}function stopBA(){document.removeEventListener('mousemove',moveBA);document.removeEventListener('mouseup',stopBA);document.removeEventListener('touchmove',moveBA);document.removeEventListe
+function startBA(e,card){e.preventDefault();const rect=card.getBoundingClientRect();function moveBA(ev){const x=(ev.touches?ev.touches[0].clientX:ev.clientX)-rect.left;const pct=Math.max(0,Math.min(100,(x/rect.width)*100));card.querySelector('.ba-after').style.clipPath=`inset(0 0 0 ${pct}%)`;card.querySelector('.ba-slider').style.left=pct+'%'}function stopBA(){document.removeEventListener('mousemove',moveBA);document.removeEventListener('mouseup',stopBA);document.removeEventListener('touchmove',moveBA);document.removeEventListener('touchend',stopBA)}document.addEventListener('mousemove',moveBA);document.addEventListener('mouseup',stopBA);document.addEventListener('touchmove',moveBA,{passive:false});document.addEventListener('touchend',stopBA)}
+</script>
+</body>
+</html>
