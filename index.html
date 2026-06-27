@@ -24,10 +24,10 @@ body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--charcoa
 .gflower{position:absolute}
 .gflower img{width:100%;height:auto;display:block;mix-blend-mode:multiply}
 
-.preloader{position:fixed;inset:0;background:var(--charcoal);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;animation:fadeOutLoader .8s ease 2.2s forwards}
-.preloader-text{font-size:clamp(18px,4vw,32px);color:var(--pink-light);letter-spacing:8px;font-weight:300;opacity:0;animation:fadeIn 1s ease .3s forwards}
-.preloader-line{width:40px;height:1px;background:var(--pink);transform:scaleX(0);animation:scaleLine 1s ease .6s forwards}
-.preloader-sub{font-size:11px;color:var(--warm-gray-light);letter-spacing:5px;text-transform:uppercase;opacity:0;animation:fadeIn 1s ease .9s forwards}
+.preloader{position:fixed;inset:0;background:var(--charcoal);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;animation:fadeOutLoader .6s ease 1.2s forwards}
+.preloader-text{font-size:clamp(18px,4vw,32px);color:var(--pink-light);letter-spacing:8px;font-weight:300;opacity:0;animation:fadeIn .8s ease .2s forwards}
+.preloader-line{width:40px;height:1px;background:var(--pink);transform:scaleX(0);animation:scaleLine .8s ease .4s forwards}
+.preloader-sub{font-size:11px;color:var(--warm-gray-light);letter-spacing:5px;text-transform:uppercase;opacity:0;animation:fadeIn .8s ease .6s forwards}
 @keyframes fadeOutLoader{to{opacity:0;pointer-events:none}}
 @keyframes fadeIn{to{opacity:1}}
 @keyframes scaleLine{to{transform:scaleX(1)}}
@@ -54,7 +54,7 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .hero-bg{position:absolute;inset:0;background:#5C3540}
 .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.65}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(166,107,118,.3) 0%,rgba(92,53,64,.55) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 40px;max-width:780px;animation:slideUp 1s ease 2.4s both}
+.hero-content{position:relative;z-index:2;padding:0 40px;max-width:780px;animation:slideUp 1s ease 1.4s both}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--pink-light);margin-bottom:28px}
 .hero-badge::before,.hero-badge::after{content:'';width:30px;height:1px;background:var(--pink-light);opacity:.6}
 .hero-title{font-size:clamp(40px,8vw,82px);font-weight:200;line-height:1.05;color:var(--white);margin-bottom:24px;letter-spacing:8px}
@@ -78,6 +78,32 @@ nav.scrolled .hamburger span{background:var(--charcoal)}
 .section-title{font-size:clamp(34px,4.5vw,52px);font-weight:500;line-height:1.2;color:var(--charcoal);margin-bottom:14px;letter-spacing:1px}
 .section-title em{font-style:normal;color:var(--pink-dark);font-weight:500}
 .section-desc{font-size:16px;color:var(--charcoal);line-height:1.7;max-width:560px;font-weight:400}
+
+/* BENİM YOLCULUĞUM */
+.benkimim-section{padding:110px 48px;position:relative;z-index:2;overflow:hidden}
+.benkimim-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 50%,rgba(212,154,164,.06),transparent 55%),radial-gradient(ellipse at 90% 30%,rgba(240,207,213,.05),transparent 50%);pointer-events:none}
+.benkimim-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.benkimim-label{margin-bottom:40px}
+.benkimim-main{display:block}
+.benkimim-main::after{content:'';display:block;clear:both}
+.benkimim-photo{float:left;width:330px;margin:6px 46px 26px 0;position:relative}
+.benkimim-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 24px 50px rgba(166,107,118,.22);display:block}
+.benkimim-photo::after{content:'';position:absolute;inset:0;border:1px solid var(--pink-light);border-radius:16px;transform:translate(14px,14px);z-index:-1;opacity:.5}
+.benkimim-content{display:block}
+.bk-paragraph{font-size:16px;color:var(--charcoal);line-height:1.85;font-weight:300;letter-spacing:.2px;margin-bottom:18px}
+.bk-em{font-style:normal;color:var(--pink-dark);font-weight:400}
+.bk-closing{font-size:16px;color:var(--warm-gray);line-height:1.85;font-weight:300;margin-top:6px;padding-top:26px;border-top:1px solid var(--pink-pale)}
+.bk-nail-babe{color:var(--pink-dark);font-weight:500;font-style:normal}
+/* İlk işler şeridi */
+.benkimim-firstworks{margin-top:70px}
+.firstworks-label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--pink-dark);margin-bottom:8px;display:flex;align-items:center;gap:10px;font-weight:500}
+.firstworks-label::before{content:'';width:24px;height:1px;background:var(--pink-dark)}
+.firstworks-note{font-size:14px;color:var(--warm-gray);font-style:italic;margin-bottom:26px;font-weight:300}
+.firstworks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.firstwork-item{border-radius:12px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1/1;box-shadow:0 6px 22px rgba(212,154,164,.14);transition:transform .4s ease,box-shadow .4s ease}
+.firstwork-item:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(212,154,164,.22)}
+.firstwork-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.firstwork-item:hover img{transform:scale(1.05)}
 
 /* NAIL BABES — with flowers */
 .babes-section{padding:120px 48px 100px;background:transparent;position:relative;overflow:hidden;transition:all .8s ease;z-index:2}
@@ -232,6 +258,9 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 .cat-section{padding:60px 24px}
 .cat-section.has-bg .cat-content{padding:0 24px}
 .babes-section{padding:80px 24px}
+.benkimim-section{padding:80px 24px}
+.benkimim-photo{float:none;width:100%;max-width:320px;margin:0 auto 32px}
+.benkimim-firstworks{margin-top:54px}
 .services-strip{padding:60px 24px}.contact-strip{padding:60px 24px}
 .services-row{flex-wrap:wrap}.service-col{flex:1 1 calc(50% - 1px);border-bottom:1px solid var(--pink-pale)}
 .ba-grid{grid-template-columns:1fr}
@@ -239,7 +268,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 .babe-card:hover{transform:scale(1.05)}
 .flower{opacity:.3}
 }
-@media(max-width:480px){.masonry{columns:1}.masonry.larger{columns:1}.babes-grid{grid-template-columns:1fr}.services-row{flex-direction:column}.service-col{border-right:none}}
+@media(max-width:480px){.masonry{columns:1}.masonry.larger{columns:1}.babes-grid{grid-template-columns:1fr}.services-row{flex-direction:column}.service-col{border-right:none}.bk-paragraph,.bk-closing{font-size:15px}}
 </style>
 </head>
 <body>
@@ -308,6 +337,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 
 <nav id="navbar">
   <ul class="nav-links">
+    <li><a href="#benkimim">Hikayem</a></li>
     <li><a href="#babes">Nail Babes</a></li>
     <li><a href="#galeri">Galeri</a></li>
     <li><a href="#hizmetler">Hizmetler</a></li>
@@ -316,6 +346,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#benkimim" onclick="closeMobile()">Hikayem</a>
   <a href="#babes" onclick="closeMobile()">Nail Babes</a>
   <a href="#galeri" onclick="closeMobile()">Galeri</a>
   <a href="#hizmetler" onclick="closeMobile()">Hizmetler</a>
@@ -330,8 +361,61 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
     <h1 class="hero-title">Nails by Ceyda</h1>
     <p class="hero-desc">Protez tırnak, kalıcı oje ve nail art. Çalışmalarıma göz atın, birlikte neler yapabileceğimizi görün.</p>
     <div class="hero-cta">
-      <a href="https://wa.me/905518259813" target="_blank" class="btn btn-primary">Randevu al</a>
-      <a href="#babes" class="btn btn-outline">Portfolyoyu keşfet</a>
+      <a href="https://ig.me/m/nails.byceyda" target="_blank" class="btn btn-insta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Randevu oluştur
+      </a>
+      <a href="#galeri" class="btn btn-outline">Neler yaptığıma bakalım</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENİM YOLCULUĞUM -->
+<section class="benkimim-section reveal" id="benkimim">
+  <div class="benkimim-inner">
+    <div class="benkimim-label">
+      <div class="section-label">Benim yolculuğum nasıl başladı</div>
+    </div>
+    <div class="benkimim-main">
+      <div class="benkimim-photo">
+        <img src="IMG_0629.jpeg" alt="Ceyda">
+      </div>
+      <div class="benkimim-content">
+        <p class="bk-paragraph">
+          Süleyman Demirel Üniversitesi Bilgisayar Mühendisliği öğrencisiyim.
+          Benim hikâyem biraz tesadüf, biraz da inatla başladı.
+        </p>
+        <p class="bk-paragraph">
+          Isparta'da öğrenciyken ek gelir elde etmek istiyordum. Garsonluğu denedim ama
+          bana göre olmadığını kısa sürede anladım. Tam o dönemde kardeşim protez tırnağa
+          başlamıştı. Evde malzemeler hazırdı ve kendi kendime
+          <em class="bk-em">"Ben de öğrensem ne olur ki?"</em> dedim.
+        </p>
+        <p class="bk-paragraph">
+          Ama bu işi asla hafife almadım. Hayatımda sadece bir kez protez tırnak
+          yaptırmıştım; törpü tutmayı bile bilmiyordum. Eğitime başladığımda her şey benim
+          için yeniydi ve tahmin ettiğimden çok daha zordu. O günlerde bugün yaptığım
+          nail art tasarımlarını hayal bile edemezdim.
+        </p>
+        <p class="bk-paragraph">
+          Zamanla her şey yerine oturdu. Öğrendim, geliştim, sabrettim. Sadece para
+          kazanmak için çıktığım bu yol, farkına bile varmadan
+          <em class="bk-em">en büyük tutkum hâline geldi.</em>
+        </p>
+        <p class="bk-closing">
+          Ve bana güvenip gelen herkese tek bir isimle sesleniyorum:
+          siz benim <strong class="bk-nail-babe">Nail Babe</strong>'lerimsiniz ✦
+        </p>
+      </div>
+    </div>
+    <div class="benkimim-firstworks">
+      <div class="firstworks-label">İlk çalışmalarımdan</div>
+      <p class="firstworks-note">Her şeyin başladığı yer — buradan bugüne. Aşağı kaydırdıkça gerisini göreceksiniz ✦</p>
+      <div class="firstworks-grid">
+        <div class="firstwork-item" onclick="openLightbox(this)"><img src="IMG_3717.jpeg" alt="İlk çalışmalarımdan"></div>
+        <div class="firstwork-item" onclick="openLightbox(this)"><img src="IMG_3688.jpeg" alt="İlk çalışmalarımdan"></div>
+        <div class="firstwork-item" onclick="openLightbox(this)"><img src="IMG_3072.jpeg" alt="İlk çalışmalarımdan"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -565,7 +649,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
         </a>
-        <a href="https://www.instagram.com/nails.byceyda/" target="_blank" class="btn btn-insta">
+        <a href="https://ig.me/m/nails.byceyda" target="_blank" class="btn btn-insta">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           Instagram DM
         </a>
@@ -590,7 +674,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp'tan yazın
       </a>
-      <a href="https://www.instagram.com/nails.byceyda/" target="_blank" class="btn btn-insta">
+      <a href="https://ig.me/m/nails.byceyda" target="_blank" class="btn btn-insta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         Instagram'dan yazın
       </a>
@@ -610,7 +694,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
 <footer>
   <div class="footer-inner">
     <div><div class="footer-brand">Nails by Ceyda</div><p class="footer-tagline">Isparta'da profesyonel tırnak tasarımı. Protez tırnak, kalıcı oje ve nail art.</p></div>
-    <div><div class="footer-heading">Menü</div><a href="#babes" class="footer-link">Nail Babes</a><a href="#galeri" class="footer-link">Galeri</a><a href="#hizmetler" class="footer-link">Hizmetler</a><a href="#iletisim" class="footer-link">İletişim</a></div>
+    <div><div class="footer-heading">Menü</div><a href="#benkimim" class="footer-link">Hikayem</a><a href="#babes" class="footer-link">Nail Babes</a><a href="#galeri" class="footer-link">Galeri</a><a href="#hizmetler" class="footer-link">Hizmetler</a><a href="#iletisim" class="footer-link">İletişim</a></div>
   </div>
   <div class="footer-bottom">© 2026 Nails by Ceyda — Tüm hakları saklıdır.</div>
 </footer>
@@ -622,7 +706,7 @@ nav{padding:18px 24px}nav.scrolled{padding:12px 24px}
   <img id="lightboxImg" src="" alt="">
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
 const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu');
